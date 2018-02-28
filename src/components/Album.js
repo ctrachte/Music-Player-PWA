@@ -10,4 +10,4 @@ class Album extends Component {
   }
 }
 
-export default Albums;
+export default Album;
