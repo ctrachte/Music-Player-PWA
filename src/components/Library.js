@@ -7,7 +7,6 @@ class Library extends Component {
     super(props);
     this.state = { albums: albumData };
   }
-  }
 
   render() {
    return (
