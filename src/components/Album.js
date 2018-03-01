@@ -16,7 +16,14 @@ class Album extends Component {
   render() {
     return (
       <section className="album">
-        Album will go here
+        <section id="album-info">
+          <img id="album-cover-art" />
+          <div className="album-details">
+            <h1 id="album-title"></h1>
+            <h2 className="artist"></h2>
+            <div id="release-info"></div>
+          </div>
+        </section>
       </section>
     );
   }
