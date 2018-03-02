@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin:5%
 }
 
 .App-logo {
@@ -29,4 +30,8 @@
 
 table {
   width:100%;
+  border-style: solid;
+}
+td {
+  border-style:groove;
 }
