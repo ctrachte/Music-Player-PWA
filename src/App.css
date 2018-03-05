@@ -35,3 +35,6 @@ table {
 td {
   border-style:groove;
 }
+.song-number {
+  padding: 5px;
+}
