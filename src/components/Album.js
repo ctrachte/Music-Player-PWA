@@ -31,13 +31,15 @@ class Album extends Component {
             </colgroup>
             <thead>
               <tr>
-                Song Number
-              </tr>
-              <tr>
-                Song Title
-              </tr>
-              <tr>
-                Song Duration (seconds)
+                <th>
+                  Song Number
+                </th>
+                <th>
+                  Song Title
+                </th>
+                <th>
+                  Song Duration (seconds)
+                </th>
               </tr>
             </thead>
             <tbody>
