@@ -16,6 +16,7 @@ class Album extends Component {
         this.audioElement = document.createElement('audio');
         this.audioElement.src = album.songs[0].audioSrc;
   }
+
   play() {
     this.audioElement.play();
     this.setState({ isPlaying: true });
@@ -24,7 +25,10 @@ class Album extends Component {
     this.audioElement.pause();
     this.setState({ isPlaying: false });
   }
-
+  setSong(song) {
+    this.audioElement.src = song.audioSrc;
+    this.setState({ currentSong: song });
+  }
 
   render() {
     return (
