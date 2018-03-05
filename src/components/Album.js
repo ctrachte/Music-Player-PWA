@@ -89,6 +89,7 @@ class Album extends Component {
             }
             </tbody>
         </table>
+        <PlayerBar />
       </section>
     );
   }
