@@ -20,7 +20,7 @@ class Album extends Component {
         this.audioElement = document.createElement('audio');
         this.audioElement.src = album.songs[0].audioSrc;
   }
-  
+
   componentDidMount() {
     this.eventListeners = {
       timeupdate: e => {
@@ -36,9 +36,9 @@ class Album extends Component {
 
   componentWillUnmount() {
     this.audioElement.src = null;
-    this.audioElement = null;
+    this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
+    this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
   }
-
 
   play() {
     this.audioElement.play();
