@@ -20,6 +20,10 @@ class Album extends Component {
     this.audioElement.play();
     this.setState({ isPlaying: true });
   }
+  pause() {
+    this.audioElement.pause();
+    this.setState({ isPlaying: false });
+  }
 
 
   render() {
