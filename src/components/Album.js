@@ -12,6 +12,8 @@ class Album extends Component {
         this.state = {
           album: album,
           currentSong: album.songs[0],
+          currentTime: 0,
+          duration: album.songs[0].duration,
           isPlaying: false
         };
 
