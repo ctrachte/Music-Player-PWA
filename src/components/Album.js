@@ -41,6 +41,9 @@ class Album extends Component {
     }
   }
 
+  handlePrevClick() {
+  }
+
   render() {
     return (
       <section className="album">
