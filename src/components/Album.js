@@ -29,6 +29,9 @@ class Album extends Component {
     this.audioElement.src = song.audioSrc;
     this.setState({ currentSong: song });
   }
+  handleSongClick(song) {
+    const isSameSong = this.state.currentSong === song;
+  }
 
   render() {
     return (
