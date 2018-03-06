@@ -38,3 +38,15 @@ td {
 .song-number {
   padding: 5px;
 }
+
+.total-time {
+  padding:5px;
+}
+.current-time {
+  padding: 5px;
+}
+.player-bar {
+  margin:1%;
+  padding:1%;
+  border-style: outset;
+}
