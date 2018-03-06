@@ -13,7 +13,7 @@ class Album extends Component {
           album: album,
           currentSong: album.songs[0],
           currentTime: 0,
-          currentVolume: 50,
+          currentVolume: 0.5,
           duration: album.songs[0].duration,
           isPlaying: false
         };
@@ -34,7 +34,7 @@ class Album extends Component {
         this.setState({ currentVolume: this.audioElement.volume });
       }
     };
-    this.audioElement.addEventListener('volumechange', this.eventListeners.volumeupdate);
+    this.audioElement.addEventListener('volumechange', this.eventListeners.volumechange);
     this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
     this.audioElement.addEventListener('durationchange', this.eventListeners.durationchange);
   }
@@ -86,17 +86,19 @@ class Album extends Component {
   }
 
   handleTimeChange(e) {
-    const newTime = this.audioElement.duration * e.target.value;
+    const newTime = (this.audioElement.duration * e.target.value).toLocaleTimeString();
     this.audioElement.currentTime = newTime;
     this.setState({ currentTime: newTime });
   }
 
   handleVolumeChange(e) {
-    const newVolume = (e.target.value / 100);
-    this.audioElement.volume = newVolume;
+    const newVolume = (e.target.value);
+    this.audioElement.volume= newVolume;
     this.setState({ currentVolume: newVolume });
   }
-
+  // formatTime(time){
+  //     const newTime = Math.floor(time / 60) + ':' + Math.floor(time % 60);
+  // }
   render() {
     return (
       <section className="album">
@@ -149,6 +151,7 @@ class Album extends Component {
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
           currentTime={this.audioElement.currentTime}
+          currentVolume={this.state.currentVolume}
           duration={this.audioElement.duration}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
