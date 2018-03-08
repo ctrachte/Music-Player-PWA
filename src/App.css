@@ -34,8 +34,8 @@ table {
   border-style: solid;
 }
 
-tr {
-  border-style: solid;
+tr:hover {
+  background-color: #70ff70;
 }
 
 .total-time {
