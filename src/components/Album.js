@@ -153,8 +153,8 @@ class Album extends Component {
             <tbody>
             {
               this.state.album.songs.map( (song, index) =>
-              <tr className="song" id={index+1} key={index} onClick={() => this.handleSongClick(song)} >
-                <td className="song-number" onMouseOver={() => this.setState({ hoverIndex: index })} onMouseLeave={() => this.setState({ hoverIndex:null })}>
+              <tr className="song" id={index+1} key={index} onClick={() => this.handleSongClick(song)} onMouseOver={() => this.setState({ hoverIndex: index })} onMouseLeave={() => this.setState({ hoverIndex:null })}>
+                <td className="song-number">
                   {this.changeIcon(index)}
                 </td>
                 <td className="song-title">{song.title}</td>
