@@ -110,6 +110,14 @@ class Album extends Component {
     }
   }
 
+  songIcon (index) {
+    if (this.state.isPlaying && this.state.album.songs[index]===this.state.currentSong) {
+      return "ion-pause";
+    } else {
+      return "ion-play";
+    }
+  }
+
   render() {
     return (
       <section className="album">
@@ -146,7 +154,7 @@ class Album extends Component {
               <tr className="song" id={index+1} key={index} onClick={() => this.handleSongClick(song)} >
                 <td className="song-actions">
                   <span className="song-number">{index+1}</span>
-                  <span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span>
+                  <span className={this.songIcon(index)}></span>
                 </td>
                 <td className="song-title">{song.title}</td>
                 <td className="song-duration">{this.formatTime(song.duration)}</td>
