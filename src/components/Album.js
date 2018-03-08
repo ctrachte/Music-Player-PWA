@@ -17,7 +17,7 @@ class Album extends Component {
           volumePercent: 50,
           duration: album.songs[0].duration,
           isPlaying: false,
-          icon: <img src="%PUBLIC_URL%/assets/images/music-play.png" alt="play icon"/>
+          hoverIndex:null
         };
 
         this.audioElement = document.createElement('audio');
@@ -110,11 +110,13 @@ class Album extends Component {
     }
   }
 
-  songIcon (index) {
+  changeIcon (index) {
     if (this.state.isPlaying && this.state.album.songs[index]===this.state.currentSong) {
       return <span class="ion-pause"></span>;
+    } else if (this.state.hoverIndex===index) {
+      return <span className="ion-play"></span>;
     } else {
-      return <span>{index+1}</span>;
+      return <span>{index+1}</span>
     }
   }
 
@@ -152,8 +154,8 @@ class Album extends Component {
             {
               this.state.album.songs.map( (song, index) =>
               <tr className="song" id={index+1} key={index} onClick={() => this.handleSongClick(song)} >
-                <td className="song-actions">
-                  {this.songIcon(index)}
+                <td className="song-number" onMouseOver={() => this.setState({ hoverIndex: index })} onMouseLeave={() => this.setState({ hoverIndex:null })}>
+                  {this.changeIcon(index)}
                 </td>
                 <td className="song-title">{song.title}</td>
                 <td className="song-duration">{this.formatTime(song.duration)}</td>

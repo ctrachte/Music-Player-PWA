@@ -34,9 +34,10 @@ table {
   border-style: solid;
 }
 
-tr:hover {
+/* tr:hover {
   background-color: #70ff70;
-}
+} */
+
 
 .total-time {
   padding:5px;
