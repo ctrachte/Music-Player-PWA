@@ -16,7 +16,8 @@ class Album extends Component {
           currentVolume: 0.5,
           volumePercent: 50,
           duration: album.songs[0].duration,
-          isPlaying: false
+          isPlaying: false,
+          icon: <img src="%PUBLIC_URL%/assets/images/music-play.png" alt="play icon"/>
         };
 
         this.audioElement = document.createElement('audio');
@@ -142,9 +143,10 @@ class Album extends Component {
             <tbody>
             {
               this.state.album.songs.map( (song, index) =>
-              <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+              <tr className="song" id={index+1} key={index} onClick={() => this.handleSongClick(song)} >
                 <td className="song-actions">
                   <span className="song-number">{index+1}</span>
+                  <span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span>
                 </td>
                 <td className="song-title">{song.title}</td>
                 <td className="song-duration">{this.formatTime(song.duration)}</td>
@@ -155,6 +157,7 @@ class Album extends Component {
         </table>
         <PlayerBar
           isPlaying={this.state.isPlaying}
+          songTitle={this.state.currentSong.title}
           currentSong={this.state.currentSong}
           currentTime={this.audioElement.currentTime}
           currentVolume={this.state.currentVolume}

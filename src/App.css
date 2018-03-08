@@ -1,4 +1,5 @@
 .App {
+  display: block;
   text-align: center;
   margin:5%
 }
@@ -33,17 +34,8 @@ table {
   border-style: solid;
 }
 
-.song-number {
-  padding: 5px;
-}
-
-.song:hover {
-  background-color: #666666;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+tr {
+  border-style: solid;
 }
 
 .total-time {
@@ -53,6 +45,8 @@ table {
   padding: 5px;
 }
 .player-bar {
+  justify-content: center;
+  max-width: 30%;
   margin:1%;
   padding:1%;
   border-style: outset;
