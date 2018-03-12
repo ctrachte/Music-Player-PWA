@@ -112,7 +112,9 @@ class Album extends Component {
 
   changeIcon (index) {
     if (this.state.isPlaying && this.state.album.songs[index]===this.state.currentSong) {
-      return <span class="ion-pause"></span>;
+      return <span className="ion-pause"></span>;
+    } else if (!this.state.isPlaying && this.state.album.songs[index]===this.state.currentSong) {
+      return <span className="ion-play"></span>;
     } else if (this.state.hoverIndex===index) {
       return <span className="ion-play"></span>;
     } else {
@@ -122,7 +124,7 @@ class Album extends Component {
 
   render() {
     return (
-      <section className="album">
+      <section className="album center">
         <section id="album-info">
           <img id="album-cover-art" src={this.state.album.albumCover} alt="album art" />
           <div className="album-details">
@@ -131,7 +133,7 @@ class Album extends Component {
             <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
         </section>
-          <table id="song-list">
+          <table id="song-list" className="color-primary-1">
             <colgroup>
               <col id="song-number-column" />
               <col id="song-title-column" />
