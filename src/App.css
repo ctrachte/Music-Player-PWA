@@ -53,3 +53,16 @@ table {
   padding:1%;
   border-style: outset;
 }
+/* As hex codes */
+
+.color-primary-0 { color: #522B72 }	/* Main Primary color */
+.color-primary-1 { color: #9376AC }
+.color-primary-2 { color: #704C8F }
+.color-primary-3 { color: #371356 }
+.color-primary-4 { color: #210439 }
+
+.color-complement-0 { color: #AAA539 }	/* Main Complement color */
+.color-complement-1 { color: #FFFBAA }
+.color-complement-2 { color: #D4D06A }
+.color-complement-3 { color: #807B15 }
+.color-complement-4 { color: #555100 }
