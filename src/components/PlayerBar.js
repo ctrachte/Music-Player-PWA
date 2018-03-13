@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class PlayerBar extends Component {
   render() {
     return (
-      <section className="player-bar color-primary-1 center">
+      <section className="player-bar color-primary-4 center">
         <h1>{this.props.isPlaying ? ("Now Playing: " + "'" + this.props.songTitle + "'") : "Choose a Song!"}</h1>
         <section id="buttons">
           <button id="previous" onClick={this.props.handlePrevClick}>
