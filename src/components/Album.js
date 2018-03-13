@@ -148,7 +148,7 @@ class Album extends Component {
           formatTime={this.formatTime(this.state.currentTime)}
           formatDuration={this.formatTime(this.state.duration - this.state.currentTime)}
         />
-          <table id="song-list" className="color-primary-4">
+          <table id="song-list" className="center">
             <colgroup>
               <col id="song-number-column" />
               <col id="song-title-column" />
