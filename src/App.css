@@ -24,9 +24,7 @@ th, td {
 }
 
 .song:hover {
-  background-color: #555100;
-  border-style: dashed;
-  border-radius: 10%;
+  background-color: #FFFBAA;
 }
 
 #song-list {
@@ -73,3 +71,89 @@ img {
 .color-complement-2 { background-color: #D4D06A }
 .color-complement-3 { background-color: #807B15 }
 .color-complement-4 { background-color: #555100 }
+
+input[type=range].seek-bar {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 0.7px 0;
+}
+input[type=range].seek-bar:focus {
+  outline: none;
+}
+input[type=range].seek-bar::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 25.6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 0px #000000, 0px 0px 1px #0d0d0d;
+  background: #484d4d;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range].seek-bar::-webkit-slider-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 27px;
+  width: 18px;
+  border-radius: 0px;
+  background: #FFFBAA;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -0.7px;
+}
+input[type=range].seek-bar:focus::-webkit-slider-runnable-track {
+  background: #c3c7c7;
+}
+input[type=range].seek-bar::-moz-range-track {
+  width: 100%;
+  height: 25.6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 0px #000000, 0px 0px 1px #0d0d0d;
+  background: #484d4d;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+input[type=range].seek-bar::-moz-range-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 27px;
+  width: 18px;
+  border-radius: 0px;
+  background: #FFFBAA;
+  cursor: pointer;
+}
+input[type=range].seek-bar::-ms-track {
+  width: 100%;
+  height: 25.6px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].seek-bar::-ms-fill-lower {
+  background: #000000;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 0px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range].seek-bar::-ms-fill-upper {
+  background: #484d4d;
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 1px 1px 0px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range].seek-bar::-ms-thumb {
+  box-shadow: 0px 0px 1px #670000, 0px 0px 0px #810000;
+  border: 0px solid #ff1e00;
+  height: 27px;
+  width: 18px;
+  border-radius: 0px;
+  background: #FFFBAA;
+  cursor: pointer;
+  height: 25.6px;
+}
+input[type=range].seek-bar:focus::-ms-fill-lower {
+  background: #484d4d;
+}
+input[type=range].seek-bar:focus::-ms-fill-upper {
+  background: #c3c7c7;
+}

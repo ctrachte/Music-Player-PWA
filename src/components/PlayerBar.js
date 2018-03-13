@@ -33,7 +33,7 @@ class PlayerBar extends Component {
           <span className="icon ion-volume-low"></span>
           <input
             type="range"
-            className="seek-bar"
+            className="volume-slider"
             value={this.props.currentVolume}
             max="1"
             min="0"
