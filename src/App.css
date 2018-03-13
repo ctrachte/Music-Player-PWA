@@ -13,14 +13,6 @@ Link:active {
   background-color:  #C80155;
 }
 
-.siteMenu {
-    position: fixed;
-    width: auto;
-    margin: 10px;
-    padding: 10px;
-    height:10px;
-}
-
 img {
   border-style: outset;
   border-radius: 10%;
@@ -45,6 +37,14 @@ img {
 }
 
 /* classes */
+
+.siteMenu {
+    position: fixed;
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    height:10px;
+}
 
 .App {
   display: block;
@@ -113,7 +113,7 @@ input[type=range].seek-bar::-webkit-slider-runnable-track {
   height: 22px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #350016;
+  background: #5A0026;
   border-radius: 8.7px;
   border: 7px solid #010101;
 }
@@ -128,14 +128,14 @@ input[type=range].seek-bar::-webkit-slider-thumb {
   margin-top: -8.5px;
 }
 input[type=range].seek-bar:focus::-webkit-slider-runnable-track {
-  background: #ff3589;
+  background: #C80155;
 }
 input[type=range].seek-bar::-moz-range-track {
   width: 70%;
   height: 22px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: #350016;
+  background: #5A0026;
   border-radius: 8.7px;
   border: 7px solid #010101;
 }
@@ -162,7 +162,7 @@ input[type=range].seek-bar::-ms-fill-lower {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 input[type=range].seek-bar::-ms-fill-upper {
-  background: #350016;
+  background: #5A0026;
   border: 7px solid #010101;
   border-radius: 17.4px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -177,8 +177,8 @@ input[type=range].seek-bar::-ms-thumb {
   height: 22px;
 }
 input[type=range].seek-bar:focus::-ms-fill-lower {
-  background: #350016;
+  background: #5A0026;
 }
 input[type=range].seek-bar:focus::-ms-fill-upper {
-  background: #ff3589;
+  background: #C80155;
 }
