@@ -4,7 +4,7 @@ class PlayerBar extends Component {
   render() {
     return (
       <section className="player-bar center">
-        <h1>{this.props.isPlaying ? ("Now Playing: " + "'" + this.props.songTitle + "'") : "Choose a Song!"}</h1>
+        <h1>{this.props.isPlaying ? ("Now Playing: '" + this.props.songTitle + "'") : "Choose a Song!"}</h1>
         <section id="buttons">
           <button id="previous" onClick={this.props.handlePrevClick}>
             <span className="ion-skip-backward"></span>
