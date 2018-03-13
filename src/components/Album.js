@@ -112,7 +112,7 @@ class Album extends Component {
   changeIcon (index) {
     if (this.state.isPlaying && this.state.album.songs[index]===this.state.currentSong) {
       return <span className="ion-pause"></span>;
-    } else if (!this.state.isPlaying && this.state.album.songs[index]===this.state.currentSong) {
+    } else if (!this.state.isPlaying && this.state.album.songs[index]===this.state.currentSong && this.state.currentTime !== 0) {
       return <span className="ion-play"></span>;
     } else if (this.state.hoverIndex===index) {
       return <span className="ion-play"></span>;
