@@ -1,7 +1,10 @@
 /* elements */
+
 table {
+  margin:5px;
   display: inline-table;
   border-style: outset;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 th, td {
@@ -19,6 +22,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* ids */
@@ -31,9 +35,23 @@ img {
   margin:10px;
 }
 
+#play-pause:hover, #next:hover, #previous:hover {
+    background-color: #C80155;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#play-pause:focus, #previous:focus, #next:focus  {
+  outline: 0;
+}
+
 #previous, #play-pause, #next {
-  width:30%;
-  height: 50px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 /* classes */
@@ -66,10 +84,12 @@ img {
 .menuOption:hover {
     background-color: #C80155 ;
     border-radius:5%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .song:hover {
   background-color: #C80155;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .total-time {
@@ -88,6 +108,9 @@ img {
     padding: 10px;
 }
 
+.button {
+
+}
 
 /* color palette: */
 
