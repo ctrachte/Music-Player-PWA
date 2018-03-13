@@ -132,6 +132,22 @@ class Album extends Component {
             <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
         </section>
+        <PlayerBar
+          isPlaying={this.state.isPlaying}
+          songTitle={this.state.currentSong.title}
+          currentSong={this.state.currentSong}
+          currentTime={this.audioElement.currentTime}
+          currentVolume={this.state.currentVolume}
+          volumePercent={this.state.volumePercent}
+          duration={this.audioElement.duration}
+          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+          handlePrevClick={() => this.handlePrevClick()}
+          handleNextClick={() => this.handleNextClick()}
+          handleTimeChange={(e) => this.handleTimeChange(e)}
+          handleVolumeChange={(e) => this.handleVolumeChange(e)}
+          formatTime={this.formatTime(this.state.currentTime)}
+          formatDuration={this.formatTime(this.state.duration - this.state.currentTime)}
+        />
           <table id="song-list" className="color-primary-4">
             <colgroup>
               <col id="song-number-column" />
@@ -165,22 +181,6 @@ class Album extends Component {
             }
             </tbody>
         </table>
-        <PlayerBar
-          isPlaying={this.state.isPlaying}
-          songTitle={this.state.currentSong.title}
-          currentSong={this.state.currentSong}
-          currentTime={this.audioElement.currentTime}
-          currentVolume={this.state.currentVolume}
-          volumePercent={this.state.volumePercent}
-          duration={this.audioElement.duration}
-          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
-          handlePrevClick={() => this.handlePrevClick()}
-          handleNextClick={() => this.handleNextClick()}
-          handleTimeChange={(e) => this.handleTimeChange(e)}
-          handleVolumeChange={(e) => this.handleVolumeChange(e)}
-          formatTime={this.formatTime(this.state.currentTime)}
-          formatDuration={this.formatTime(this.state.duration - this.state.currentTime)}
-        />
       </section>
     );
   }
