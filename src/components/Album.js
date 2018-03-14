@@ -124,51 +124,55 @@ class Album extends Component {
   render() {
     return (
       <section className="album center">
-        <div className="cube">
-          <section id="album-info" className="default-state">
-            <img id="album-cover-art" src={this.state.album.albumCover} alt="album art"/>
-            <div className="album-details">
-              <h1 id="album-title">{this.state.album.title}</h1>
-              <h2 className="artist">{this.state.album.artist}</h2>
-              <div id="release-info">{this.state.album.releaseInfo}</div>
+        <label>
+          <input type="checkbox"/>
+          <div className="card">
+            <div className="front">
+              <div className="album-details">
+                <h1 id="album-title">{this.state.album.title}</h1>
+                <h2 className="artist">{this.state.album.artist}</h2>
+                <div id="release-info">{this.state.album.releaseInfo}</div>
+              </div>
+              <img id="album-cover-art" src={this.state.album.albumCover} alt="album art"/>
             </div>
-          </section>
-          <section className="active-state">
-            <table id="song-list" className="center">
-              <colgroup>
-                <col id="song-number-column" />
-                <col id="song-title-column" />
-                <col id="song-duration-column" />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th>
-                    Song Number
-                  </th>
-                  <th>
-                    Song Title
-                  </th>
-                  <th>
-                    Duration
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-              {
-                this.state.album.songs.map( (song, index) =>
-                <tr className="song" id={index+1} key={index} onClick={() => this.handleSongClick(song)} onMouseOver={() => this.setState({ hoverIndex: index })} onMouseLeave={() => this.setState({ hoverIndex:null })}>
-                  <td className="song-number">
-                    {this.changeIcon(index)}
-                  </td>
-                  <td className="song-title">{song.title}</td>
-                  <td className="song-duration">{this.formatTime(song.duration)}</td>
-                </tr>
-                )
-              }
-              </tbody>
-            </table>
-          </section>
-        </div>
+            <div className="back">
+              <table id="song-list" className="center">
+                <colgroup>
+                  <col id="song-number-column" />
+                  <col id="song-title-column" />
+                  <col id="song-duration-column" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      Song Number
+                    </th>
+                    <th>
+                      Song Title
+                    </th>
+                    <th>
+                      Duration
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                {
+                  this.state.album.songs.map( (song, index) =>
+                  <tr className="song" id={index+1} key={index} onClick={() => this.handleSongClick(song)} onMouseOver={() => this.setState({ hoverIndex: index })} onMouseLeave={() => this.setState({ hoverIndex:null })}>
+                    <td className="song-number">
+                      {this.changeIcon(index)}
+                    </td>
+                    <td className="song-title">{song.title}</td>
+                    <td className="song-duration">{this.formatTime(song.duration)}</td>
+                  </tr>
+                  )
+                }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </label>
+
         <PlayerBar
           isPlaying={this.state.isPlaying}
           songTitle={this.state.currentSong.title}

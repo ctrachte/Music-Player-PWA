@@ -97,7 +97,8 @@ img {
 }
 .player-bar {
   position: fixed;
-  bottom: 10%;
+  border-radius: 10px;
+  bottom: 50%;
   left: 10%;
   width:300px;
   border-style: solid outset;
@@ -117,65 +118,72 @@ img {
 .color-primary-3 { color: #5A0026 }
 .color-primary-4 { color: #350016 }
 
-/* Flip cube styling */
-.cube {
-	margin: 30px auto;
-	position: relative;
-	width: 500px;
-	height: 500px;
+/* Flip box styling */
+
+
+label {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: block;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
 
-.default-state, .active-state {
-	height: 500px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	transition: transform 1s ease;
-	transform-origin: center center -50px;
-	-webkit-transform-origin: center center -50px;
-	width: 100%;
+.card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 20;
 }
-.default-state {
-	transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+
+.card div {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 2px;
 }
-.active-state {
-  visibility: hidden;
-	transform:  perspective(1000px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
-}
-.cube:hover .default-state {
-  visibility: hidden;
-	transform:  perspective(1000px) rotateX(90deg) rotateY(0) rotateZ(0deg);
-}
-.cube:hover .active-state {
-  visibility: visible;
-	z-index: 99999;
-	transform:  perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0);
-}
-/*
-.active-state {
+
+.album-details {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  border-radius: 10px;
+  width: 500px;
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+.card .back {
   height: 500px;
   width: 500px;
-  opacity: 0;
-  transition: .5s ease;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
 }
 
-.cube:hover .active-state {
-  opacity: 1;
+:checked + .card {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
 }
 
-.default-state {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-} */
+label:hover :checked + .card {
+    box-shadow: 0 20px 20px rgba(255,255,255,.2);
+}
+
 /* seek bar styling from http://danielstern.ca/range.css/#/ */
 
 input[type=range].seek-bar {
