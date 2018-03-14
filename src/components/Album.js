@@ -123,6 +123,7 @@ class Album extends Component {
 
   render() {
     return (
+
       <section className="album center">
         <label>
           <input type="checkbox"/>
@@ -172,7 +173,6 @@ class Album extends Component {
             </div>
           </div>
         </label>
-
         <PlayerBar
           isPlaying={this.state.isPlaying}
           songTitle={this.state.currentSong.title}
@@ -190,6 +190,7 @@ class Album extends Component {
           formatDuration={this.formatTime(this.state.duration - this.state.currentTime)}
         />
       </section>
+
     );
   }
 }
