@@ -117,7 +117,65 @@ img {
 .color-primary-3 { color: #5A0026 }
 .color-primary-4 { color: #350016 }
 
+/* Flip cube styling */
+.cube {
+	margin: 30px auto;
+	position: relative;
+	width: 500px;
+	height: 500px;
+}
 
+.default-state, .active-state {
+	height: 500px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: transform 1s ease;
+	transform-origin: center center -50px;
+	-webkit-transform-origin: center center -50px;
+	width: 100%;
+}
+.default-state {
+	transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.active-state {
+  visibility: hidden;
+	transform:  perspective(1000px) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+}
+.cube:hover .default-state {
+  visibility: hidden;
+	transform:  perspective(1000px) rotateX(90deg) rotateY(0) rotateZ(0deg);
+}
+.cube:hover .active-state {
+  visibility: visible;
+	z-index: 99999;
+	transform:  perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0);
+}
+/*
+.active-state {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 500px;
+  width: 500px;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.cube:hover .active-state {
+  opacity: 1;
+}
+
+.default-state {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+} */
 /* seek bar styling from http://danielstern.ca/range.css/#/ */
 
 input[type=range].seek-bar {
