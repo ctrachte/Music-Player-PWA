@@ -98,11 +98,13 @@ img {
 }
 
 .hero-title {
+  color:white;
   font-size: 5em;
   font-family: CyberPunk;
 }
 
 .point-title {
+  color:white;
   font-family: monospace;
   font-style: italic;
   font-size: 3em;
