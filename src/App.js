@@ -14,7 +14,7 @@ class App extends Component {
           <div className="siteMenu">
             <nav>
               <Link to='/'><div className="menuOption">Home</div></Link>
-              <Link to='/library'><div className="menuOption">Library</div></Link>
+              <Link to='/library'><div className="menuOption">Albums</div></Link>
             </nav>
           </div>
         </header>
