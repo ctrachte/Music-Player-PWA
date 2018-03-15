@@ -13,17 +13,6 @@ body {
   height:100%;
 }
 
-.hero-title {
-  font-size: 5em;
-  font-family: CyberPunk;
-}
-
-.point-title {
-  font-family: monospace;
-  font-style: italic;
-  font-size: 3em;
-}
-
 table {
   background-color: white;
   width: 500px;
@@ -102,6 +91,17 @@ img {
 
 .album {
   border-radius: 5%;
+}
+
+.hero-title {
+  font-size: 5em;
+  font-family: CyberPunk;
+}
+
+.point-title {
+  font-family: monospace;
+  font-style: italic;
+  font-size: 3em;
 }
 
 .library-tile {
