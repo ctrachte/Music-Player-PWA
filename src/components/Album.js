@@ -125,6 +125,22 @@ class Album extends Component {
     return (
 
       <section className="album center">
+        <PlayerBar
+          isPlaying={this.state.isPlaying}
+          songTitle={this.state.currentSong.title}
+          currentSong={this.state.currentSong}
+          currentTime={this.audioElement.currentTime}
+          currentVolume={this.state.currentVolume}
+          volumePercent={this.state.volumePercent}
+          duration={this.audioElement.duration}
+          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+          handlePrevClick={() => this.handlePrevClick()}
+          handleNextClick={() => this.handleNextClick()}
+          handleTimeChange={(e) => this.handleTimeChange(e)}
+          handleVolumeChange={(e) => this.handleVolumeChange(e)}
+          formatTime={this.formatTime(this.state.currentTime)}
+          formatDuration={this.formatTime(this.state.duration - this.state.currentTime)}
+        />
         <label>
           <input type="checkbox"/>
           <div className="card">
@@ -173,22 +189,7 @@ class Album extends Component {
             </div>
           </div>
         </label>
-        <PlayerBar
-          isPlaying={this.state.isPlaying}
-          songTitle={this.state.currentSong.title}
-          currentSong={this.state.currentSong}
-          currentTime={this.audioElement.currentTime}
-          currentVolume={this.state.currentVolume}
-          volumePercent={this.state.volumePercent}
-          duration={this.audioElement.duration}
-          handleSongClick={() => this.handleSongClick(this.state.currentSong)}
-          handlePrevClick={() => this.handlePrevClick()}
-          handleNextClick={() => this.handleNextClick()}
-          handleTimeChange={(e) => this.handleTimeChange(e)}
-          handleVolumeChange={(e) => this.handleVolumeChange(e)}
-          formatTime={this.formatTime(this.state.currentTime)}
-          formatDuration={this.formatTime(this.state.duration - this.state.currentTime)}
-        />
+
       </section>
 
     );
